@@ -9,7 +9,7 @@ print("======================================================= Server Exectution
 
 def fun(c,addr):
     query=c.recv(1024).decode()
-    mydb = mysql.connector.connect(host="localhost",user="root",password="",database="poemds")
+    mydb = mysql.connector.connect(host="localhost",user="username",password="",database="Your_Database_name")
     mycursor=mydb.cursor()
     mycursor.execute(query)
     c.send(", ".join(map(str, mycursor.fetchall())).encode())
